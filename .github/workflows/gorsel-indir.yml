@@ -1,0 +1,21 @@
+name: Hero gorselini indir
+on: workflow_dispatch
+permissions:
+  contents: write
+jobs:
+  indir:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: claude/repo-site-visibility-j5rnex
+      - name: Indir, donustur ve commit et
+        run: |
+          curl -sSf -o /tmp/hero.png "https://d8j0ntlcm91z4.cloudfront.net/user_3ElhGWIrjmXUjfY59soz5cuf6Jd/hf_20260719_021358_bdf0065d-6f71-4cd5-a13b-4aae0c22fd56.png"
+          convert /tmp/hero.png -quality 82 img/hero.jpg
+          ls -la img/hero.jpg
+          git config user.name "Claude"
+          git config user.email "noreply@anthropic.com"
+          git add img/hero.jpg
+          git commit -m "Hero arka plan gorseli eklendi (AI uretimi, Actions uzerinden indirildi)"
+          git push
