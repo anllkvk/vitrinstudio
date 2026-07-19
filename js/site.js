@@ -70,3 +70,13 @@
     var navEl = document.querySelector('nav');
     addEventListener('scroll', function(){ navEl.classList.toggle('scrolled', scrollY > 12); }, {passive:true});
   }
+
+// Ölçüm: CTA tıklama olayları (GoatCounter, çerezsiz)
+addEventListener('click', function(e){
+  var a = e.target.closest && e.target.closest('a[href^="https://wa.me"],a[href^="mailto:"]');
+  if(!a || !window.goatcounter || !window.goatcounter.count) return;
+  var bolum = a.closest('section,header,nav,footer');
+  var yer = bolum ? (bolum.id || (bolum.className || '').split(' ')[0] || bolum.tagName.toLowerCase()) : 'sayfa';
+  var tur = a.href.indexOf('mailto:') === 0 ? 'eposta' : 'whatsapp';
+  window.goatcounter.count({ path: 'cta-' + tur + '-' + yer, title: 'CTA: ' + tur + ' (' + yer + ')', event: true });
+});
