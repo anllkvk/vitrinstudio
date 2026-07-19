@@ -18,6 +18,9 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="AI ile iyileştirilmiş otel kahvaltı alanı fotoğrafı — Vitrin Studio örnek çalışması">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Vitrin Studio — Küçük Otellerin Online Vitrini">
+<meta name="twitter:description" content="AI destekli fotoğraf iyileştirme, ilan metni ve web sitesi. Ücretsiz örnek çalışmayla başlayın.">
+<meta name="twitter:image" content="https://anllkvk.github.io/vitrinstudio/img/og-kapak.jpg">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -25,6 +28,7 @@
   "name": "Vitrin Studio",
   "description": "Küçük otel ve pansiyonlar için AI destekli fotoğraf iyileştirme, ilan metni ve web sitesi hizmeti.",
   "url": "https://anllkvk.github.io/vitrinstudio/",
+  "image": "https://anllkvk.github.io/vitrinstudio/img/og-kapak.jpg",
   "telephone": "+90-553-188-82-75",
   "email": "anlkvk22@gmail.com",
   "areaServed": "TR",
@@ -32,6 +36,39 @@
   "founder": [
     { "@type": "Person", "name": "Anıl Kavak", "url": "https://anllkvk.github.io" },
     { "@type": "Person", "name": "Yiğit Yılmaz" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Fotoğraflar AI ile mi düzenleniyor? Gerçekçi mi kalıyor?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Evet, AI destekli araçlar kullanıyoruz — ama yalnızca ışık, renk, netlik ve kadraj düzeltiriz. Odada olmayan bir manzara, mobilya veya deniz asla eklenmez. Misafir geldiğinde gördüğü yer fotoğraftaki yerdir." }
+    },
+    {
+      "@type": "Question",
+      "name": "Fotoğraflarım başka yerde kullanılır mı?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Size hazırladığımız ön izleme size özeldir; işletmenizle ilişkilendirilerek izniniz olmadan paylaşılmaz. Sitemizdeki örnekler ise anonimdir — hiçbir işletme adı, konum veya kimlik bilgisi içermez." }
+    },
+    {
+      "@type": "Question",
+      "name": "Fiyat nasıl belirleniyor?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sabit bir fiyat listesi tutmuyoruz. Önce ücretsiz örneği görürsünüz; beğenirseniz işletmenizin ihtiyacına göre size özel bir fiyat veririz. Profesyonel bir çekimin çok altında bir bütçedir; çoğu zaman tek bir ek rezervasyon bile masrafı karşılar." }
+    },
+    {
+      "@type": "Question",
+      "name": "Ödeme nasıl yapılıyor?",
+      "acceptedAnswer": { "@type": "Answer", "text": "%50 peşin, %50 teslimde havale/EFT ile. İş tesliminde basit bir teslim özeti paylaşırız. Detayları görüşmede netleştiririz." }
+    },
+    {
+      "@type": "Question",
+      "name": "Ne kadar sürede teslim alırım?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Kapsam ve iş büyüklüğüne göre değişir; görsel iyileştirme genellikle birkaç iş günü içinde teslim edilir. Görüşmede net bir tarih veririz." }
+    }
   ]
 }
 </script>
@@ -97,7 +134,7 @@
 
   /* SECTIONS */
   section{padding:104px 0;}
-  section[id]{counter-increment:sec;}
+  .sec-head{counter-increment:sec;}
   .alt{background:var(--white);}
   .dark{background:var(--dark);color:#f3efe8;}
   .sec-head{text-align:center;max-width:680px;margin:0 auto 64px;}
@@ -241,7 +278,7 @@
 <nav>
   <div class="nav-in">
     <a href="#" class="logo"><span class="mono">V</span>Vitrin <em>Studio</em></a>
-    <details class="mnav">
+    <details class="mnav" open>
       <summary aria-label="Menü">Menü</summary>
       <div class="nav-links">
         <a href="#deger">Neden Önemli</a>
@@ -518,8 +555,14 @@
     range.addEventListener('input', function(){ upd(this.value); });
     upd(range.value);
   });
+  var mnav = document.querySelector('.mnav');
+  var mobilMq = matchMedia('(max-width:820px)');
+  function syncNav(){ if(mnav) mnav.open = !mobilMq.matches; }
+  syncNav();
+  if(mobilMq.addEventListener){ mobilMq.addEventListener('change', syncNav); }
+  else if(mobilMq.addListener){ mobilMq.addListener(syncNav); }
   document.querySelectorAll('.mnav .nav-links a').forEach(function(a){
-    a.addEventListener('click', function(){ var d = a.closest('details'); if(d) d.open = false; });
+    a.addEventListener('click', function(){ if(mnav && mobilMq.matches) mnav.open = false; });
   });
   if (window.matchMedia && matchMedia('(prefers-reduced-motion:no-preference)').matches && 'IntersectionObserver' in window){
     var io = new IntersectionObserver(function(es){
