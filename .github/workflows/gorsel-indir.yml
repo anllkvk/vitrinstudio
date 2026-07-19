@@ -1,5 +1,8 @@
 name: Hero gorselini indir
-on: workflow_dispatch
+on:
+  push:
+    branches: [claude/repo-site-visibility-j5rnex]
+    paths: ['.github/workflows/gorsel-indir.yml']
 permissions:
   contents: write
 jobs:
