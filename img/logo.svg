@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Vitrin Studio logosu">
+  <rect x="3" y="3" width="58" height="58" fill="#fbf9f5" stroke="#b0470a" stroke-width="3"/>
+  <g fill="#b0470a">
+    <rect x="3" y="3" width="58" height="10"/>
+    <circle cx="8.8" cy="13" r="5.8"/>
+    <circle cx="20.4" cy="13" r="5.8"/>
+    <circle cx="32" cy="13" r="5.8"/>
+    <circle cx="43.6" cy="13" r="5.8"/>
+    <circle cx="55.2" cy="13" r="5.8"/>
+  </g>
+  <text x="32" y="53" font-family="Georgia, 'Times New Roman', serif" font-size="28" text-anchor="middle" fill="#1c1c1c">V</text>
+</svg>
