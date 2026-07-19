@@ -1,5 +1,5 @@
 # Vitrin Studio
 
-Kucuk otel ve pansiyonlar icin gorsel ve ilan metni studyosu.
+Butik otel ve pansiyonlar için dijital vitrin stüdyosu — AI destekli fotoğraf iyileştirme, ilan metni ve web sitesi hizmetleri.
 
 Site: https://anllkvk.github.io/vitrinstudio/
