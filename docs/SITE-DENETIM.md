@@ -24,7 +24,11 @@ Tarih: 2026-07-19 · Kapsam: index.html, sitemap.xml, robots.txt, img/
 
 ## Bilinen açık konular (sonraki iterasyon)
 
-1. **Analitik yok** — CTA tıklamaları ve funnel ölçülemiyor. Öneri: GoatCounter/Cloudflare Analytics (çerezsiz). → `donusum-analisti` ajanı, Skill 3
+1. ~~**Analitik yok**~~ → **Kuruldu (2026-07-19):** GoatCounter (çerezsiz, KVKK dostu) her iki
+   sayfada; tüm WhatsApp/e-posta CTA'ları bölüm bazlı olay olarak ölçülüyor
+   (`cta-whatsapp-hero`, `cta-eposta-iletisim` vb.). Verilerin akması için
+   goatcounter.com'da **vitrinstudio** koduyla hesap açılması gerekiyor;
+   pano: https://vitrinstudio.goatcounter.com
 2. **Sosyal kanıt yok** — ilk müşteri yorumları geldikçe eklenecek bölüm. → `donusum-analisti`, Skill 4
 3. WebP dönüşümü ~%25 ek kazanç sağlayabilir (mevcut boyutlar zaten kabul edilebilir). → `performans-muhendisi`, Skill 2
 
